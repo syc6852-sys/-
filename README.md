@@ -1,1 +1,35 @@
-# -
+# -1. 브랜드 선정 및 기획 (예시)
+브랜드명: LUMINA (루미나)
+제품군: 스마트 수면 보조 조명 (AI가 사용자의 수면 패턴에 맞춰 빛의 파장을 조절함)
+타겟: 스트레스와 불면증에 시도 때도 없이 시달리는 2030 직장인
+톤앤매너: 몽환적인(Dreamy), 평온한(Serene), 미니멀한(Minimalist), 미래지향적인(Tech-chic)
+캠페인 핵심 메시지: "당신의 밤을 가장 완벽한 휴식으로 디자인합니다."
+2. 스토리보드 설계 (10초 광고 구성)
+이 표를 참고하여 PDF 문서를 작성하세요.
+
+씬 번호	길이	목표 메시지	화면 구성 (비주얼)	내레이션/카피	사용 도구 및 목적
+#1	3초	혼란스러운 일상과 대비되는 평온함	도시의 복잡한 불빛이 흐릿해지며 LUMINA 조명의 부드러운 빛으로 전환	"복잡한 하루의 끝,"	Midjourney(이미지), Runway Gen-3(비디오 변환)
+#2	4초	제품의 핵심 가치 (깊은 잠)	침대 옆 협탁에 놓인 조명. 사용자가 편안하게 잠든 모습, 조명은 은은하게 호흡하듯 깜빡임	"오직 당신만을 위한 빛의 휴식."	Kling AI(비디오), ElevenLabs(내레이션)
+#3	3초	브랜드 인지 및 마무리 (CTA)	깔끔한 배경에 LUMINA 로고와 제품 실루엣 등장	"LUMINA. 다시 태어나는 아침."	DALL-E 3(로고), Suno AI(BGM)
+3. 프롬프트 설계 전략 (핵심 팁)
+미션 요구사항 중 "프롬프트 수정 전/후" 작성을 돕기 위한 예시입니다.
+
+수정 전 (Before): A smart lamp on a table, soft blue light, cozy bedroom.
+문제점: 결과물이 너무 평범하고, 브랜드가 추구하는 '미래지향적이고 고급스러운' 느낌이 부족함.
+수정 후 (After): Cinematic close-up of a minimalist organic-shaped smart lamp, pulsating soft amber and violet light, hyper-realistic, 8k, soft bokeh background of a modern bedroom, serene atmosphere, shot on 35mm lens --ar 16:9
+수정 이유: 구체적인 색상(Amber, Violet), 질감(Organic-shaped), 촬영 기법(35mm lens, Bokeh)을 추가하여 브랜드의 프리미엄 이미지를 강조함.
+4. 추천 파이프라인 (도구 조합)
+학생분의 원활한 제작을 위해 제가 추천하는 도구 세트입니다.
+
+이미지 생성 (Image): Midjourney (일관성 유지 기능인 --cref, --sref 활용 추천) 또는 DALL-E 3.
+비디오 생성 (Video): Runway Gen-3 Alpha 또는 Luma Dream Machine. (이미지를 넣고 움직임을 주는 Image-to-Video 방식이 일관성 유지에 유리합니다.)
+오디오 생성 (Audio):
+내레이션: ElevenLabs (차분하고 신뢰감 있는 목소리 선택)
+배경음악: Suno AI 또는 Udio (프롬프트: Ambient, Lo-fi, calm, futuristic, sleep aid music)
+통합 편집 (Edit): CapCut 또는 Vrew (자막 및 오디오 믹싱).
+5. 제작 시 주의할 점 (튜터의 조언)
+일관성(Consistency)이 핵심: 1번 씬의 조명 디자인과 2번 씬의 조명 디자인이 다르면 광고의 몰입도가 깨집니다. 이미지 생성 시 동일한 시드(Seed) 번호를 사용하거나, 기준 이미지를 비디오 생성기에 참조 이미지로 꼭 넣으세요.
+10초의 미학: 시간이 매우 짧습니다. 텍스트 카피는 최소화하고 시각적인 분위기로 메시지를 전달하세요.
+로고 삽입: 마지막 씬에서 브랜드 로고가 명확히 보여야 합니다. 캔바(Canva)나 포토샵으로 로고 이미지를 따로 만들어 영상 위에 얹는 방식을 추천합니다.
+
+file:///C:/Users/swedu17/Downloads/f27b6523-5eaa-4e72-a5ae-70aa6fd005cb.mp4
