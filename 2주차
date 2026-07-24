@@ -1,0 +1,368 @@
+AI 기반 브랜드 광고 제작 기획서
+과제명
+
+AI 기반 브랜드 광고 제작 - EcoDrop
+
+1. 브랜드 아이덴티티
+브랜드명
+
+EcoDrop
+
+브랜드 소개
+
+친환경 소재를 사용한 스마트 텀블러 브랜드
+
+타겟
+20~30대 대학생 및 직장인
+친환경 소비를 실천하는 MZ세대
+디자인과 실용성을 모두 중요하게 생각하는 소비자
+톤앤매너
+Clean
+Minimal
+Premium
+Fresh
+Nature
+USP(차별점)
+
+"온도를 24시간 유지하는 친환경 스마트 텀블러"
+
+광고 목적
+
+브랜드 인지도 향상(Brand Awareness)
+
+핵심 메시지
+
+"한 방울의 선택이 지구를 바꾼다."
+
+2. 캠페인 개요
+캠페인명
+
+One Drop Makes Tomorrow
+
+광고 길이
+
+10초
+
+화면비
+
+16:9 (1920×1080)
+
+프레임
+
+30fps
+
+최종 파일
+
+EcoDrop_AI_Brand_Ad.mp4
+
+3. 사용 AI 도구
+도구	용도	선택 이유
+ChatGPT	광고 기획 및 프롬프트 작성	스토리 구성 및 문구 작성
+Midjourney	이미지 생성	고품질 제품 이미지 생성
+Runway Gen-3	이미지를 영상으로 변환	부드러운 카메라 무빙 생성
+ElevenLabs	나레이션 생성	자연스러운 음성
+Suno AI	배경음악 생성	광고 분위기에 맞는 음악 생성
+CapCut	최종 편집	컷 편집, 자막, 음량 조절
+4. 스토리보드
+Scene 1
+씬 번호
+
+01
+
+길이
+
+2초
+
+목표 메시지
+
+환경을 생각하는 작은 선택이 시작된다.
+
+화면 구성
+숲속 아침 햇살
+물방울이 떨어짐
+깨끗한 자연
+텍스트 없음
+내레이션
+
+"세상을 바꾸는 시작."
+
+사용 도구
+
+이미지
+
+Midjourney
+
+비디오
+
+Runway
+
+오디오
+
+Suno
+ElevenLabs
+입력 프롬프트
+A beautiful green forest at sunrise, crystal water drops falling from leaves, cinematic lighting, ultra realistic, soft morning sunlight, shallow depth of field, premium commercial photography, 8k
+
+출력 결과 요약
+
+숲과 물방울이 강조된 자연 배경 생성
+
+생성 파일
+
+scene01_image.png
+
+scene01_video.mp4
+
+scene01_bgm.wav
+
+Scene 2
+씬 번호
+
+02
+
+길이
+
+3초
+
+목표 메시지
+
+친환경 제품 소개
+
+화면 구성
+EcoDrop 텀블러 회전
+물이 담기는 장면
+흰 배경
+제품 강조
+내레이션
+
+"EcoDrop 스마트 텀블러."
+
+사용 도구
+
+이미지
+
+Midjourney
+
+비디오
+
+Runway
+
+오디오
+
+ElevenLabs
+입력 프롬프트
+Premium eco-friendly smart tumbler, floating product shot, white clean studio background, cinematic lighting, product commercial, realistic reflections, luxury advertisement, 8k
+
+출력 결과 요약
+
+제품 중심 광고 이미지 생성
+
+생성 파일
+
+scene02_image.png
+
+scene02_video.mp4
+
+scene02_voice.wav
+
+Scene 3
+씬 번호
+
+03
+
+길이
+
+2초
+
+목표 메시지
+
+일상 속 친환경 라이프
+
+화면 구성
+직장인이 텀블러 사용
+카페
+미소
+자연광
+내레이션
+
+"당신의 하루가 달라집니다."
+
+사용 도구
+
+이미지
+
+Midjourney
+
+비디오
+
+Runway
+
+오디오
+
+Suno
+입력 프롬프트
+Young professional using eco-friendly tumbler in a modern cafe, warm sunlight, happy lifestyle, premium commercial photography, realistic, cinematic
+
+출력 결과 요약
+
+브랜드 사용 장면 생성
+
+생성 파일
+
+scene03_image.png
+
+scene03_video.mp4
+
+Scene 4 (Ending)
+씬 번호
+
+04
+
+길이
+
+3초
+
+목표 메시지
+
+브랜드 기억시키기
+
+화면 구성
+EcoDrop 로고
+제품
+슬로건
+CTA
+화면 카피
+
+EcoDrop
+
+One Drop Makes Tomorrow
+
+Shop Now
+
+내레이션
+
+"한 방울의 선택이 내일을 만듭니다."
+
+사용 도구
+
+이미지
+
+Midjourney
+
+비디오
+
+Runway
+
+오디오
+
+Suno
+입력 프롬프트
+Luxury product advertisement, eco tumbler with green leaves, clean white background, premium branding, logo placement area, cinematic lighting
+
+출력 결과 요약
+
+브랜드 엔딩 화면 생성
+
+생성 파일
+
+scene04_image.png
+
+scene04_video.mp4
+
+5. 프롬프트 수정 전/후
+Scene 2
+수정 전 프롬프트
+Smart tumbler product on white background
+
+문제점
+제품이 평범하게 생성됨
+광고 느낌 부족
+조명이 약함
+고급스러움이 부족함
+수정 후 프롬프트
+Premium eco-friendly smart tumbler floating in clean white studio, cinematic lighting, luxury commercial product photography, realistic reflections, shallow depth of field, ultra detailed, 8k
+
+수정 이유
+Premium 추가
+Commercial photography 추가
+Cinematic lighting 추가
+Floating product 추가
+Reflection 추가
+Ultra detailed 추가
+결과 변화
+제품이 훨씬 고급스럽게 표현됨
+광고 느낌 강화
+브랜드 이미지 향상
+조명이 자연스럽고 입체감 증가
+6. 제작 파이프라인
+
+기획
+↓
+
+ChatGPT로 광고 기획 작성
+↓
+
+Midjourney에서 이미지 생성
+↓
+
+Runway Gen-3에서 이미지를 영상으로 변환
+↓
+
+ElevenLabs에서 나레이션 생성
+↓
+
+Suno AI에서 BGM 생성
+↓
+
+CapCut에서 컷 편집, 자막, 음량 조절
+↓
+
+MP4(H.264/AAC) 출력
+
+7. 멀티모달 제작 전략
+캐릭터 및 스타일 일관성
+Midjourney Style Reference(sref) 사용
+동일 색감 유지
+흰색·초록색 중심 컬러 사용
+해상도 관리
+모든 이미지를 16:9 비율 생성
+1920×1080 통일
+오디오 톤
+잔잔한 피아노
+자연의 효과음
+차분한 여성 나레이션
+크레딧 절약 전략
+먼저 이미지 생성 후 영상 변환
+이미지 확정 후 Runway 사용
+Scene 4개만 제작하여 크레딧 절약
+8. 대체 AI 도구
+분야	기본 도구	대체 도구
+이미지	Midjourney	FLUX, DALL·E 3, Stable Diffusion
+비디오	Runway	Pika, Kling AI, Luma AI
+음성	ElevenLabs	PlayHT, Microsoft TTS
+음악	Suno	Udio, Stable Audio
+9. 최종 영상 정보
+
+파일명
+
+EcoDrop_AI_Brand_Ad.mp4
+
+영상 길이
+
+10초
+
+해상도
+
+1920×1080
+
+프레임
+
+30fps
+
+비디오 코덱
+
+H.264
+
+오디오 코덱
+
+AAC
