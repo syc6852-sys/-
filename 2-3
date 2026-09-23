@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Prompt Studio</title>
+
+    <meta
+        name="description"
+        content="AI로 프롬프트를 개선하고 새로운 프롬프트를 만들어보세요."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container nav-container">
+
+        <a href="#home" class="logo">
+            Prompt<span>Studio</span>
+        </a>
+
+        <nav class="nav">
+            <a href="#home">홈</a>
+            <a href="#improve">프롬프트 개선</a>
+            <a href="#generate">아이디어 생성</a>
+            <a href="#about">사용 방법</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+    <!-- HOME -->
+    <section id="home" class="hero section">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <span class="badge">AI PROMPT TOOL</span>
+
+                <h1>
+                    생각을 입력하면<br>
+                    <span>좋은 프롬프트</span>가 됩니다.
+                </h1>
+
+                <p>
+                    AI Prompt Studio는 복잡한 프롬프트 작성 과정을
+                    AI가 도와주는 간단한 웹 서비스입니다.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#improve" class="btn primary">
+                        프롬프트 개선하기
+                    </a>
+
+                    <a href="#generate" class="btn secondary">
+                        새 프롬프트 만들기
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="card-label">PROMPT PREVIEW</div>
+
+                <div class="prompt-example">
+                    <span>사용자</span>
+                    <p>
+                        블로그 글을 써줘.
+                    </p>
+                </div>
+
+                <div class="arrow">↓</div>
+
+                <div class="prompt-example result">
+                    <span>AI</span>
+                    <p>
+                        SEO에 최적화된 블로그 글을 작성해주세요.
+                        독자의 관심을 끌 수 있는 제목 3개를 먼저 제안하고,
+                        서론-본론-결론 구조로 작성해주세요.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- IMPROVE -->
+    <section id="improve" class="section light-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="badge">01 / IMPROVE</span>
+
+                <h2>프롬프트 개선</h2>
+
+                <p>
+                    현재 가지고 있는 프롬프트를 입력하면
+                    AI가 더 구체적이고 효과적인 프롬프트로 개선합니다.
+                </p>
+            </div>
+
+
+            <div class="tool-card">
+
+                <label for="improveInput">
+                    개선할 프롬프트
+                </label>
+
+                <textarea
+                    id="improveInput"
+                    placeholder="예: 인스타그램 광고 문구를 만들어줘."
+                    maxlength="2000"
+                ></textarea>
+
+                <div class="input-info">
+                    <span>최대 2,000자</span>
+                    <span id="improveCount">0 / 2000</span>
+                </div>
+
+                <button
+                    id="improveButton"
+                    class="btn primary full"
+                >
+                    AI로 프롬프트 개선하기
+                </button>
+
+
+                <div
+                    id="improveLoading"
+                    class="loading hidden"
+                >
+                    <div class="spinner"></div>
+                    AI가 프롬프트를 분석하고 있습니다...
+                </div>
+
+
+                <div
+                    id="improveError"
+                    class="message error hidden"
+                ></div>
+
+
+                <div
+                    id="improveResult"
+                    class="result-box hidden"
+                >
+                    <div class="result-header">
+                        <h3>개선된 프롬프트</h3>
+
+                        <button
+                            id="copyImprove"
+                            class="copy-button"
+                        >
+                            복사
+                        </button>
+                    </div>
+
+                    <div
+                        id="improveOutput"
+                        class="result-content"
+                    ></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GENERATE -->
+    <section id="generate" class="section">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="badge">02 / GENERATE</span>
+
+                <h2>새로운 프롬프트 생성</h2>
+
+                <p>
+                    만들고 싶은 콘텐츠를 설명하면
+                    AI가 바로 사용할 수 있는 프롬프트를 만들어줍니다.
+                </p>
+            </div>
+
+
+            <div class="tool-card">
+
+                <label for="generateInput">
+                    무엇을 만들고 싶나요?
+                </label>
+
+                <textarea
+                    id="generateInput"
+                    placeholder="예: 유튜브 쇼츠용 IT 제품 리뷰 영상을 만들고 싶어요."
+                    maxlength="2000"
+                ></textarea>
+
+                <div class="input-info">
+                    <span>최대 2,000자</span>
+                    <span id="generateCount">0 / 2000</span>
+                </div>
+
+
+                <button
+                    id="generateButton"
+                    class="btn primary full"
+                >
+                    AI로 프롬프트 생성하기
+                </button>
+
+
+                <div
+                    id="generateLoading"
+                    class="loading hidden"
+                >
+                    <div class="spinner"></div>
+                    새로운 프롬프트를 만들고 있습니다...
+                </div>
+
+
+                <div
+                    id="generateError"
+                    class="message error hidden"
+                ></div>
+
+
+                <div
+                    id="generateResult"
+                    class="result-box hidden"
+                >
+                    <div class="result-header">
+                        <h3>생성된 프롬프트</h3>
+
+                        <button
+                            id="copyGenerate"
+                            class="copy-button"
+                        >
+                            복사
+                        </button>
+                    </div>
+
+                    <div
+                        id="generateOutput"
+                        class="result-content"
+                    ></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="section about-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="badge">03 / GUIDE</span>
+
+                <h2>사용 방법</h2>
+
+                <p>
+                    세 단계면 충분합니다.
+                </p>
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>아이디어 입력</h3>
+                    <p>
+                        만들고 싶은 콘텐츠나 현재 가지고 있는
+                        프롬프트를 입력합니다.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>AI 분석</h3>
+                    <p>
+                        AI가 입력 내용을 분석하고 더 구체적인
+                        프롬프트를 작성합니다.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>결과 활용</h3>
+                    <p>
+                        완성된 프롬프트를 복사해서 원하는
+                        AI 서비스에서 사용할 수 있습니다.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="notice">
+                <strong>TIP</strong>
+                <p>
+                    좋은 결과를 얻으려면 원하는 결과물의 종류,
+                    대상, 분위기, 형식 등을 구체적으로 입력해보세요.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="container">
+
+        <p>
+            © 2026 AI Prompt Studio
+        </p>
+
+        <p>
+            Built with HTML, CSS, JavaScript & Python
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
