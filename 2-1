@@ -1,0 +1,330 @@
+CATEGORIES = [
+    "텍스트 생성",
+    "이미지 생성",
+    "영상 생성",
+    "페르소나",
+    "자동화",
+    "기타"
+]
+
+prompts = [
+    {
+        "title": "블로그 글 작성 도우미",
+        "content": (
+            "당신은 10년 경력의 전문 블로거입니다.\n"
+            "주어진 주제에 대해 SEO에 최적화된 블로그 글을 작성해주세요.\n"
+            "서론, 본론, 결론 구조를 갖추고 독자의 관심을 끄는 제목을 3개 제안해주세요."
+        ),
+        "category": "텍스트 생성",
+        "favorite": False
+    },
+    {
+        "title": "제품 썸네일 생성",
+        "content": (
+            "제품의 핵심 특징과 장점을 분석하고,\n"
+            "온라인 쇼핑몰에서 클릭을 유도할 수 있는 매력적인 썸네일 이미지 프롬프트를 작성해주세요."
+        ),
+        "category": "이미지 생성",
+        "favorite": False
+    },
+    {
+        "title": "IT 컨설턴트 페르소나",
+        "content": (
+            "당신은 15년 경력의 IT 컨설턴트입니다.\n"
+            "복잡한 기술 개념을 비전문가도 이해하기 쉽게 설명하고,\n"
+            "현실적인 해결 방법을 단계별로 제시해주세요."
+        ),
+        "category": "페르소나",
+        "favorite": False
+    },
+    {
+        "title": "뉴스 요약 자동화",
+        "content": (
+            "다음 뉴스 내용을 핵심 정보 중심으로 요약해주세요.\n"
+            "핵심 내용, 주요 인물, 중요한 수치와 향후 영향을 구분해서 정리해주세요."
+        ),
+        "category": "자동화",
+        "favorite": False
+    }
+]
+
+
+def show_menu():
+    """메인 메뉴를 출력합니다."""
+    print("\n" + "=" * 45)
+    print("        나만의 프롬프트 관리 프로그램")
+    print("=" * 45)
+    print("1. 프롬프트 추가")
+    print("2. 프롬프트 목록")
+    print("3. 카테고리별 조회")
+    print("4. 프롬프트 검색")
+    print("5. 프롬프트 상세 보기")
+    print("6. 즐겨찾기 관리")
+    print("7. 즐겨찾기 목록")
+    print("0. 종료")
+    print("=" * 45)
+
+
+def get_category():
+    """카테고리를 선택받습니다."""
+    print("\n카테고리 선택")
+
+    for i, category in enumerate(CATEGORIES, 1):
+        print(f"{i}) {category}")
+
+    while True:
+        choice = input("선택: ").strip()
+
+        if choice.isdigit():
+            number = int(choice)
+
+            if 1 <= number <= len(CATEGORIES):
+                return CATEGORIES[number - 1]
+
+        print("잘못된 선택입니다. 다시 입력해주세요.")
+
+
+def get_non_empty_input(message):
+    """빈 입력을 방지합니다."""
+    while True:
+        value = input(message).strip()
+
+        if value:
+            return value
+
+        print("입력값이 비어 있습니다. 다시 입력해주세요.")
+
+
+def add_prompt():
+    """새로운 프롬프트를 추가합니다."""
+    print("\n=== 프롬프트 추가 ===")
+
+    title = get_non_empty_input("제목: ")
+
+    print("내용을 입력해주세요.")
+    content = get_non_empty_input("내용: ")
+
+    category = get_category()
+
+    new_prompt = {
+        "title": title,
+        "content": content,
+        "category": category,
+        "favorite": False
+    }
+
+    prompts.append(new_prompt)
+
+    print("\n프롬프트가 추가되었습니다!")
+
+
+def print_prompt_item(index, prompt):
+    """프롬프트 하나를 목록 형태로 출력합니다."""
+    favorite = " ⭐" if prompt["favorite"] else ""
+
+    print(
+        f"{index}. [{prompt['category']}] "
+        f"{prompt['title']}{favorite}"
+    )
+
+
+def show_list(prompt_list=None):
+    """전체 프롬프트 목록을 출력합니다."""
+    print("\n=== 프롬프트 목록 ===")
+
+    if prompt_list is None:
+        prompt_list = prompts
+
+    if not prompt_list:
+        print("등록된 프롬프트가 없습니다.")
+        return
+
+    for index, prompt in enumerate(prompt_list, 1):
+        print_prompt_item(index, prompt)
+
+    print(f"\n총 {len(prompt_list)}개의 프롬프트")
+
+
+def select_category():
+    """카테고리를 선택합니다."""
+    return get_category()
+
+
+def show_by_category():
+    """카테고리별 프롬프트를 출력합니다."""
+    print("\n=== 카테고리별 조회 ===")
+
+    category = select_category()
+
+    result = [
+        prompt
+        for prompt in prompts
+        if prompt["category"] == category
+    ]
+
+    print(f"\n[{category}] 카테고리 프롬프트")
+
+    if not result:
+        print("해당 카테고리에 프롬프트가 없습니다.")
+        return
+
+    for index, prompt in enumerate(result, 1):
+        print_prompt_item(index, prompt)
+
+    print(f"\n총 {len(result)}개의 프롬프트")
+
+
+def search_prompt():
+    """제목 또는 내용에서 키워드를 검색합니다."""
+    print("\n=== 프롬프트 검색 ===")
+
+    keyword = get_non_empty_input("검색어: ").lower()
+
+    result = []
+
+    for prompt in prompts:
+        title = prompt["title"].lower()
+        content = prompt["content"].lower()
+
+        if keyword in title or keyword in content:
+            result.append(prompt)
+
+    if not result:
+        print("\n검색 결과가 없습니다.")
+        return
+
+    print("\n검색 결과:")
+
+    for index, prompt in enumerate(result, 1):
+        print_prompt_item(index, prompt)
+
+    print(f"\n{len(result)}개의 프롬프트를 찾았습니다.")
+
+
+def get_prompt_number():
+    """프롬프트 번호를 입력받습니다."""
+    if not prompts:
+        print("등록된 프롬프트가 없습니다.")
+        return None
+
+    while True:
+        value = input("프롬프트 번호 입력: ").strip()
+
+        if value.isdigit():
+            number = int(value)
+
+            if 1 <= number <= len(prompts):
+                return number - 1
+
+        print("잘못된 번호입니다. 다시 입력해주세요.")
+
+
+def show_detail():
+    """프롬프트의 상세 내용을 출력합니다."""
+    print("\n=== 프롬프트 상세 보기 ===")
+
+    index = get_prompt_number()
+
+    if index is None:
+        return
+
+    prompt = prompts[index]
+
+    favorite = "⭐" if prompt["favorite"] else "없음"
+
+    print("\n" + "-" * 50)
+    print(f"제목: {prompt['title']}")
+    print(f"카테고리: {prompt['category']}")
+    print(f"즐겨찾기: {favorite}")
+    print("-" * 50)
+    print("내용:")
+    print(prompt["content"])
+    print("-" * 50)
+
+
+def manage_favorite():
+    """즐겨찾기를 추가하거나 해제합니다."""
+    print("\n=== 즐겨찾기 관리 ===")
+
+    index = get_prompt_number()
+
+    if index is None:
+        return
+
+    prompt = prompts[index]
+
+    prompt["favorite"] = not prompt["favorite"]
+
+    if prompt["favorite"]:
+        print(
+            f"'{prompt['title']}' 프롬프트를 "
+            "즐겨찾기에 추가했습니다!"
+        )
+    else:
+        print(
+            f"'{prompt['title']}' 프롬프트를 "
+            "즐겨찾기에서 해제했습니다!"
+        )
+
+
+def show_favorites():
+    """즐겨찾기 목록을 출력합니다."""
+    print("\n=== 즐겨찾기 목록 ===")
+
+    favorites = [
+        prompt
+        for prompt in prompts
+        if prompt["favorite"]
+    ]
+
+    if not favorites:
+        print("즐겨찾기한 프롬프트가 없습니다.")
+        return
+
+    for index, prompt in enumerate(favorites, 1):
+        print_prompt_item(index, prompt)
+
+    print(f"\n총 {len(favorites)}개의 즐겨찾기")
+
+
+def main():
+    """프로그램의 메인 실행 함수입니다."""
+    print("\n프롬프트 관리 프로그램을 시작합니다!")
+
+    while True:
+        show_menu()
+
+        choice = input("선택: ").strip()
+
+        if choice == "1":
+            add_prompt()
+
+        elif choice == "2":
+            show_list()
+
+        elif choice == "3":
+            show_by_category()
+
+        elif choice == "4":
+            search_prompt()
+
+        elif choice == "5":
+            show_detail()
+
+        elif choice == "6":
+            manage_favorite()
+
+        elif choice == "7":
+            show_favorites()
+
+        elif choice == "0":
+            print("\n프로그램을 종료합니다. 감사합니다!")
+            break
+
+        else:
+            print("\n잘못된 메뉴 번호입니다.")
+            print("0~7 사이의 번호를 입력해주세요.")
+
+
+if __name__ == "__main__":
+    main()
